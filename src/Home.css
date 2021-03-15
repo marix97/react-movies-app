@@ -1,0 +1,26 @@
+.Home{
+    background-image: url(./imgs/photo-1524985069026-dd778a71c7b4.jfif);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-box{
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    border: 2px white solid;
+    background:brown;
+    border-radius: 10%;
+  }
+
+  @media(max-width: 767px) {
+    .container {
+        width: auto;
+    }
+}

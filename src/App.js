@@ -1,24 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import Popular from './Popular';
+import Home from './Home';
+import TopRated from './TopRated';
+import Upcoming from './Upcoming';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+          <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/popular">Popular movies</Link>
+            </li>
+            <li>
+              <Link to="/toprated">Top Rated movies</Link>
+            </li>
+            <li>
+              <Link to="/upcoming">Upcoming movies</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/popular">
+            <Popular />
+          </Route>
+          <Route path="/toprated">
+            <TopRated />
+          </Route>
+          <Route path="/upcoming">
+            <Upcoming />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
